@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vite/
+src-tauri/target/
+src-tauri/gen/
+
+# secrets / runtime state
+data/cookie.txt
+data/cookie.bak.txt
+data/last-sid.txt
+data/seed.txt
+data/cache/
+
+*.log
+.DS_Store
+.env
+.env.*
