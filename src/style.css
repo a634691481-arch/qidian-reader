@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif; }
+.reader-body p { margin: 0 0 0.9em; line-height: 1.95; text-indent: 2em; }
+
+/* ---- 交互细节 ---- */
+button:not(:disabled):active { transform: translateY(0.5px); }
+button:disabled { cursor: not-allowed; }
+:focus-visible { outline: 2px solid #10b981; outline-offset: 2px; border-radius: 6px; }
+::selection { background: rgba(16, 185, 129, 0.28); }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+input[type='text'], input:not([type]) { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(120, 120, 120, 0.35); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: rgba(120, 120, 120, 0.6); background-clip: content-box; }
+::-webkit-scrollbar-track { background: transparent; }

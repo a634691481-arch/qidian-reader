@@ -4,12 +4,14 @@ dist/
 src-tauri/target/
 src-tauri/gen/
 
-# secrets / runtime state
-data/cookie.txt
-data/cookie.bak.txt
-data/last-sid.txt
-data/seed.txt
-data/cache/
+__pycache__/
+*.pyc
+
+# runtime data: cookies, login callbacks, QR images, caches, debug captures
+data/*
+!data/sources.json
+!data/search-sample.html
+!data/vip-chapter.html
 
 *.log
 .DS_Store

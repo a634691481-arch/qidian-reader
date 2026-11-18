@@ -1,0 +1,49 @@
+{
+  "_readme": "外部书源规则。起点 VIP 章在未购买时只下发试读（实测：3054 字的章只给 110 字），付费墙命中后按这里的源顺序回填正文，前一个源失败或正文残缺就顺延到下一个。字段：searchUrl 里 {kw} 换成 URL 编码书名，多个候选域名用 | 分隔；itemSelector 是搜索结果里指向书页的 <a>；itemTitleAttr 取书名属性（留空取文本）；chapterSelector 是目录页章节 <a>；contentSelector 支持 | 分隔多个候选；removeSelectors 是正文里要剔掉的节点；proxy 可给单源配代理（留空用环境变量 SOURCE_PROXY / HTTPS_PROXY）。enabled=true 才参与回落。",
+  "sources": [
+    {
+      "name": "夜天连看",
+      "enabled": true,
+      "searchUrl": "http://www.yetianlian.net/s.php?ie=utf-8&q={kw}",
+      "itemSelector": ".bookbox .bookname a",
+      "chapterSelector": ".listmain dd a",
+      "contentSelector": "#content.showtxt|#content",
+      "removeSelectors": ["script", ".path", ".link", ".page_chapter"],
+      "referer": "http://www.yetianlian.net/",
+      "proxy": ""
+    },
+    {
+      "name": "壁落小说",
+      "enabled": true,
+      "searchUrl": "https://www.biquluo.info/search.html?name={kw}|https://www.biquluo.la/search.html?name={kw}",
+      "itemSelector": ".novelslist2 li span.s2 a",
+      "chapterSelector": "#list dd a",
+      "contentSelector": "#content",
+      "removeSelectors": ["#center_tip", ".con_top", "script"],
+      "referer": "https://www.biquluo.info/",
+      "proxy": ""
+    },
+    {
+      "name": "笔下文学",
+      "enabled": false,
+      "searchUrl": "http://www.bxwx8.la/cse/search?q={kw}",
+      "itemSelector": ".result-game-item-title a|.s2 a",
+      "chapterSelector": "#list dd a|.listmain dd a",
+      "contentSelector": "#content|#chaptercontent",
+      "removeSelectors": ["script", ".bottem"],
+      "referer": "",
+      "proxy": ""
+    },
+    {
+      "name": "快眼看书",
+      "enabled": false,
+      "searchUrl": "http://www.booksky.cc/modules/article/search.php?searchkey={kw}",
+      "itemSelector": ".grid tr .odd a|.bookbox a",
+      "chapterSelector": "#list dd a|.listmain dd a",
+      "contentSelector": "#content|#chaptercontent",
+      "removeSelectors": ["script", ".bottem"],
+      "referer": "",
+      "proxy": ""
+    }
+  ]
+}

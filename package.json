@@ -1,0 +1,32 @@
+{
+  "name": "qidian-reader",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "起点纯算客户端（Vue3 + Vite + Tailwind/shadcn 风格 + 本地零依赖 API）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "python server/app.py",
+    "start": "concurrently -k \"npm:api\" \"npm:dev\"",
+    "tauri": "tauri",
+    "desktop": "node scripts/free-port.mjs 5174 && tauri dev",
+    "free-port": "node scripts/free-port.mjs 5174"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  }
+}
